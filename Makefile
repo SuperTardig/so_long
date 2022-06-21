@@ -6,7 +6,7 @@
 #    By: bperron <bperron@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 10:16:37 by bperron           #+#    #+#              #
-#    Updated: 2022/06/15 11:09:29 by bperron          ###   ########.fr        #
+#    Updated: 2022/06/21 15:04:05 by bperron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME_BONUS =
 LIBFT = @$(MAKE) -sC libft
 LIB = ./libft/libft.a
 
-SRCS = src/so_long.c
+SRCS = src/so_long.c src/init.c src/map.c src/map_utils.c src/plane.c src/move.c src/hook.c src/enemy.c src/enemy_move.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
