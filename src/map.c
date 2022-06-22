@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:24:04 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/22 14:50:02 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/22 16:06:37 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	error_map(t_vars *vars)
 	}
 	if (vars->map->start > 1)
 	{
-		printf("Error\nToo many Starting positions or enemies\n");
+		printf("Error\nToo many Starting positions\n");
 		out(vars, 1);
 	}
 	rectangle_map(vars);
