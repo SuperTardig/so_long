@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:01:13 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/21 15:05:49 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/22 14:50:07 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ void	init_image2(t_vars *vars)
 		(vars->mlx, "./asset/plane_left_frame3.xpm", &width, &height);
 	vars->plane->right[0] = mlx_xpm_file_to_image
 		(vars->mlx, "./asset/plane_right_frame1.xpm", &width, &height);
-	vars->enemy[0] = mlx_xpm_file_to_image
-		(vars->mlx, "./asset/felix.xpm", &width, &height);
 	init_image3(vars);
 }
 
@@ -84,6 +82,14 @@ void	init_image(t_vars *vars)
 		(vars->mlx, "./asset/clouds_frame4.xpm", &width, &height);
 	vars->clouds[4] = mlx_xpm_file_to_image
 		(vars->mlx, "./asset/clouds_frame5.xpm", &width, &height);
+	vars->enemy[0] = mlx_xpm_file_to_image
+		(vars->mlx, "./asset/stormcloud_frame1.xpm", &width, &height);
+	vars->enemy[1] = mlx_xpm_file_to_image
+		(vars->mlx, "./asset/stormcloud_frame2.xpm", &width, &height);
+	vars->enemy[2] = mlx_xpm_file_to_image
+		(vars->mlx, "./asset/stormcloud_frame3.xpm", &width, &height);
+	vars->enemy[3] = mlx_xpm_file_to_image
+		(vars->mlx, "./asset/stormcloud_frame4.xpm", &width, &height);
 	init_image2(vars);
 }
 
@@ -92,14 +98,7 @@ void	init(t_vars *vars)
 	srand(time(NULL));
 	vars->mlx = mlx_init();
 	vars->plane = malloc(sizeof(t_plane));
-	vars->plane->up = ft_calloc(3, sizeof(void *));
-	vars->plane->down = ft_calloc(3, sizeof(void *));
-	vars->plane->right = ft_calloc(3, sizeof(void *));
-	vars->plane->left = ft_calloc(3, sizeof(void *));
-	vars->seagull = ft_calloc(3, sizeof(void *));
-	vars->airstrip = ft_calloc(4, sizeof(void *));
-	vars->clouds = ft_calloc(5, sizeof(void *));
-	vars->enemy = ft_calloc(1, sizeof(void *));
+	vars->map = malloc(sizeof(t_map));
 	vars->move = 0;
 	vars->plane->dir = 1;
 	vars->frame = 0;

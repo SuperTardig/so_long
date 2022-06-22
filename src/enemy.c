@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:48:25 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/21 15:05:25 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/22 12:05:36 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,18 @@ void	enemy(t_vars *vars)
 
 	i = -1;
 	stop = 0;
-	dir = (rand() % (4 - 1 + 1)) + 1;
 	while (++i < vars->map->y && stop == 0)
 	{
-		j = 0;
-		while (vars->map->map[i][j])
+		j = -1;
+		while (vars->map->map[i][++j])
 		{
 			if (vars->map->map[i][j] == 'B')
 			{
+				dir = (rand() % (4 - 1 + 1)) + 1;
 				redirect_enemy(vars, dir, i, j);
 				stop = 1;
 				break ;
 			}
-			j++;
 		}
 	}
 }

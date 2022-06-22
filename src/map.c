@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:24:04 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/21 14:00:49 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/22 14:50:02 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,12 @@ void	error_map(t_vars *vars)
 		printf("Error\nA mandatory map component is missing\n");
 		out(vars, 1);
 	}
-	if (vars->map->start > 1 || vars->map->enemy > 1)
+	if (vars->map->start > 1)
 	{
 		printf("Error\nToo many Starting positions or enemies\n");
 		out(vars, 1);
 	}
-	if (vars->map->x == vars->map->y)
-	{
-		printf("Error\nThe map must be a rectangle\n");
-		out(vars, 1);
-	}
+	rectangle_map(vars);
 	border_map(vars);
 }
 
@@ -67,7 +63,7 @@ void	check_map(t_vars *vars)
 	vars->map->items = 0;
 	vars->map->start = 0;
 	vars->map->exit = 0;
-	vars->map->enemy = 0;
+	vars->map->ground = 0;
 	while (i < vars->map->y)
 	{
 		j = 0;
@@ -78,6 +74,12 @@ void	check_map(t_vars *vars)
 		}
 		i++;
 	}
+	vars->map->counter = vars->map->items;
+	if (vars->map->ground > 25)
+	{
+		vars->map->place = (rand() % ((vars->map->ground - 1) - 1 + 1)) + 1;
+		place_enemy(vars);
+	}
 	error_map(vars);
 }
 
@@ -85,7 +87,6 @@ void	create_map(t_vars *vars)
 {
 	int		i;
 	int		j;
-	char	*str;
 
 	vars->y = 0;
 	i = -1;
@@ -97,10 +98,7 @@ void	create_map(t_vars *vars)
 			put_image(vars, i, j);
 		vars->y += 64;
 	}
-	str = ft_itoa(vars->move);
-	mlx_string_put(vars->mlx, vars->win, 50, 20, 0x00000000, "moves : ");
-	mlx_string_put(vars->mlx, vars->win, 130, 20, 0x00000000, str);
-	free(str);
+	print_strings(vars);
 }
 
 void	read_map(t_vars *vars, char *path)
@@ -120,7 +118,6 @@ void	read_map(t_vars *vars, char *path)
 		printf("Error\nThe file doesn't end in .ber\n");
 		out(vars, 1);
 	}
-	vars->map = malloc(sizeof(t_map));
 	get_map_size(vars, path);
 	vars->map->map = ft_calloc(vars->map->y + 1, sizeof(char *));
 	put_map_in_var(vars, fd);

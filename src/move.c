@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 13:58:42 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/21 15:01:40 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/22 15:17:25 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	up(t_vars *vars, int i, int j)
 {
 	if (vars->map->map[i - 1][j] == 'B')
 	{
-		printf("You have died...\n");
+		printf("You have died. Git gud fuckin noob\n");
 		out(vars, 0);
 	}
 	if (vars->map->map[i - 1][j] != '1')
@@ -28,14 +28,15 @@ void	up(t_vars *vars, int i, int j)
 			vars->map->map[i - 1][j] = 'P';
 			vars->map->map[i][j] = '0';
 			vars->move++;
+			printf("Moves : %d\n", vars->move);
 		}
 		else if (vars->map->items == 0)
 		{
-			printf("Nice job!\n");
+			printf("Moves : %d\nNice job!\n", ++vars->move);
 			out(vars, 0);
 		}
 		else
-			printf("You still have some seagulls to hit!\n");
+			printf("You still have %d seagull(s) to hit!\n", vars->map->items);
 	}
 }
 
@@ -43,7 +44,7 @@ void	down(t_vars *vars, int i, int j)
 {
 	if (vars->map->map[i + 1][j] == 'B')
 	{
-		printf("You have died...\n");
+		printf("You have died. Git gud fuckin noob\n");
 		out(vars, 0);
 	}
 	if (vars->map->map[i + 1][j] != '1')
@@ -55,14 +56,15 @@ void	down(t_vars *vars, int i, int j)
 			vars->map->map[i + 1][j] = 'P';
 			vars->map->map[i][j] = '0';
 			vars->move++;
+			printf("Moves : %d\n", vars->move);
 		}
 		else if (vars->map->items == 0)
 		{
-			printf("Nice job!\n");
+			printf("Moves : %d\nNice job!\n", ++vars->move);
 			out(vars, 0);
 		}
 		else
-			printf("You still have some seagulls to hit!\n");
+			printf("You still have %d seagull(s) to hit!\n", vars->map->items);
 	}
 }
 
@@ -70,7 +72,7 @@ void	right(t_vars *vars, int i, int j)
 {
 	if (vars->map->map[i][j + 1] == 'B')
 	{
-		printf("You have died...\n");
+		printf("You have died. Git gud fuckin noob\n");
 		out(vars, 0);
 	}
 	if (vars->map->map[i][j + 1] != '1')
@@ -82,14 +84,15 @@ void	right(t_vars *vars, int i, int j)
 			vars->map->map[i][j + 1] = 'P';
 			vars->map->map[i][j] = '0';
 			vars->move++;
+			printf("Moves : %d\n", vars->move);
 		}
 		else if (vars->map->items == 0)
 		{
-			printf("Nice job!\n");
+			printf("Moves : %d\nNice job!\n", ++vars->move);
 			out(vars, 0);
 		}
 		else
-			printf("You still have some seagulls to hit!\n");
+			printf("You still have %d seagull(s) to hit!\n", vars->map->items);
 	}
 }
 
@@ -97,7 +100,7 @@ void	left(t_vars *vars, int i, int j)
 {
 	if (vars->map->map[i][j - 1] == 'B')
 	{
-		printf("You have died...\n");
+		printf("You have died. Git gud fuckin noob\n");
 		out(vars, 0);
 	}
 	if (vars->map->map[i][j - 1] != '1')
@@ -109,13 +112,14 @@ void	left(t_vars *vars, int i, int j)
 			vars->map->map[i][j - 1] = 'P';
 			vars->map->map[i][j] = '0';
 			vars->move++;
+			printf("Moves : %d\n", vars->move);
 		}
 		else if (vars->map->items == 0)
 		{
-			printf("Nice job!\n");
+			printf("Moves : %d\nNice job!\n", ++vars->move);
 			out(vars, 0);
 		}
 		else
-			printf("You still have some seagulls to hit!\n");
+			printf("You still have %d seagull(s) to hit!\n", vars->map->items);
 	}
 }

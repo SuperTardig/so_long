@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 13:39:43 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/21 15:05:19 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/22 11:16:01 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void	anim(t_vars *vars)
 	vars->frame_exit++;
 	if (vars->frame_exit == 4)
 		vars->frame_exit = 0;
+	vars->frame_enemy++;
+	if (vars->frame_enemy == 4)
+		vars->frame_enemy = 0;
 	create_map(vars);
 }
 

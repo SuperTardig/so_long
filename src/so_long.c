@@ -6,14 +6,59 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 09:48:03 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/21 13:28:31 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/22 14:50:19 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+void	destroy_image2(t_vars *vars)
+{
+	int	i;
+
+	i = -1;
+	while (++i < 3)
+		mlx_destroy_image(vars->mlx, vars->plane->down[i]);
+	i = -1;
+	while (++i < 3)
+		mlx_destroy_image(vars->mlx, vars->plane->up[i]);
+	i = -1;
+	while (++i < 3)
+		mlx_destroy_image(vars->mlx, vars->plane->right[i]);
+	i = -1;
+	while (++i < 3)
+		mlx_destroy_image(vars->mlx, vars->plane->left[i]);
+}
+
+void	destroy_image(t_vars *vars)
+{
+	int	i;
+
+	i = -1;
+	while (++i < 4)
+		mlx_destroy_image(vars->mlx, vars->airstrip[i]);
+	i = -1;
+	while (++i < 5)
+		mlx_destroy_image(vars->mlx, vars->clouds[i]);
+	i = -1;
+	while (++i < 4)
+		mlx_destroy_image(vars->mlx, vars->enemy[i]);
+	i = -1;
+	while (++i < 3)
+		mlx_destroy_image(vars->mlx, vars->seagull[i]);
+	destroy_image2(vars);
+}
+
 int	out(t_vars *vars, int code)
 {
+	int	i;
+
+	i = -1;
+	if (vars->map->map)
+		while (++i < vars->map->y)
+			free(vars->map->map[i]);
+	destroy_image(vars);
+	free(vars->plane);
 	if (code == 0)
 		mlx_destroy_window(vars->mlx, vars->win);
 	exit (code);

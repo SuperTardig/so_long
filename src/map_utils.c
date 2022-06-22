@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:24:00 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/21 13:53:50 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/22 13:16:59 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ void	check_pos(char pos, t_vars *vars)
 		vars->map->start++;
 	else if (pos == 'E')
 		vars->map->exit++;
-	else if (pos == 'B')
-		vars->map->enemy++;
-	else if (pos != '1' && pos != '0')
+	else if (pos == '0')
+		vars->map->ground++;
+	else if (pos != '1')
 	{
 		printf("Error\n");
 		printf("unerecognized character in map\n");
