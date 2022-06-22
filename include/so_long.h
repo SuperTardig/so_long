@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:41:14 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/21 15:03:56 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/22 14:06:35 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 # include "../libft/libft.h"
 
 typedef struct s_plane{
-	void	**up;
-	void	**down;
-	void	**right;
-	void	**left;
+	void	*up[3];
+	void	*down[3];
+	void	*right[3];
+	void	*left[3];
 	int		dir;
 }	t_plane;
 
@@ -31,19 +31,21 @@ typedef struct s_map{
 	int		x;
 	int		y;
 	int		items;
+	int		counter;
 	int		exit;
 	int		start;
-	int		enemy;
+	int		ground;
+	int		place;
 	char	**map;
 }	t_map;
 
 typedef struct s_vars {
 	void	*mlx;
 	void	*win;
-	void	**clouds;
-	void	**airstrip;
-	void	**seagull;
-	void	**enemy;
+	void	*clouds[5];
+	void	*airstrip[4];
+	void	*seagull[3];
+	void	*enemy[4];
 	void	*ground;
 	t_plane	*plane;
 	t_map	*map;
@@ -70,6 +72,9 @@ void	check_map(t_vars *vars);
 void	error_map(t_vars *vars);
 void	border_map(t_vars *vars);
 void	put_map_in_var(t_vars *vars, int fd);
+void	rectangle_map(t_vars *vars);
+void	print_strings(t_vars *vars);
+void	place_enemy(t_vars *vars);
 
 void	redirect_plane(t_vars *vars, int i, int j);
 void	plane_move(t_vars *vars);
