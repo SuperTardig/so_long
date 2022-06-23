@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_utils.c                                        :+:      :+:    :+:   */
+/*   map_utils_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:24:00 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/22 15:02:59 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/23 09:45:51 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	check_pos(char pos, t_vars *vars)
 	{
 		printf("Error\n");
 		printf("unerecognized character in map\n");
-		exit (1);
+		out(vars, 1);
 	}
 }
 

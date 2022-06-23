@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:24:04 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/22 16:06:37 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/23 09:48:34 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	check_map(t_vars *vars)
 	vars->map->items = 0;
 	vars->map->start = 0;
 	vars->map->exit = 0;
-	vars->map->ground = 0;
 	while (i < vars->map->y)
 	{
 		j = 0;
@@ -75,11 +74,6 @@ void	check_map(t_vars *vars)
 		i++;
 	}
 	vars->map->counter = vars->map->items;
-	if (vars->map->ground > 25)
-	{
-		vars->map->place = (rand() % ((vars->map->ground - 1) - 1 + 1)) + 1;
-		place_enemy(vars);
-	}
 	error_map(vars);
 }
 
@@ -111,12 +105,12 @@ void	read_map(t_vars *vars, char *path)
 	if (fd < 0)
 	{
 		printf("Error\nThe file doesn't exist\n");
-		out(vars, 1);
+		out(vars, 2);
 	}
 	if (ft_strnstr(path, ".ber", ft_strlen(path)) == 0)
 	{
 		printf("Error\nThe file doesn't end in .ber\n");
-		out(vars, 1);
+		out(vars, 2);
 	}
 	get_map_size(vars, path);
 	vars->map->map = ft_calloc(vars->map->y + 1, sizeof(char *));

@@ -6,7 +6,7 @@
 #    By: bperron <bperron@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 10:16:37 by bperron           #+#    #+#              #
-#    Updated: 2022/06/22 15:22:10 by bperron          ###   ########.fr        #
+#    Updated: 2022/06/23 09:47:57 by bperron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ LIBFT = @$(MAKE) -sC libft
 LIB = ./libft/libft.a
 
 HEADERS = include/so_long.h
-SRCS = src/so_long.c src/init.c src/map.c src/map_utils.c src/map_utils2.c src/plane.c src/move.c src/hook.c src/enemy.c src/enemy_move.c
+SRCS = src/so_long.c src/init.c src/map.c src/map_utils.c src/map_utils2.c src/plane.c src/move.c src/hook.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT_BONUS = @$(MAKE) -sC bonus/libft

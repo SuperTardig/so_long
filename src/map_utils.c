@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:24:00 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/22 13:16:59 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/23 09:48:48 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,11 @@ void	check_pos(char pos, t_vars *vars)
 		vars->map->start++;
 	else if (pos == 'E')
 		vars->map->exit++;
-	else if (pos == '0')
-		vars->map->ground++;
-	else if (pos != '1')
+	else if (pos != '1' && pos != '0')
 	{
 		printf("Error\n");
 		printf("unerecognized character in map\n");
-		exit (1);
+		out(vars, 1);
 	}
 }
 
@@ -83,10 +81,6 @@ void	put_image(t_vars *vars, int i, int j)
 		mlx_put_image_to_window
 		(vars->mlx, vars->win,
 		vars->seagull[vars->frame_seagull], vars->x, vars->y);
-	else if (vars->map->map[i][j] == 'B')
-		mlx_put_image_to_window
-		(vars->mlx, vars->win,
-		vars->enemy[vars->frame_enemy], vars->x, vars->y);
 	vars->x += 64;
 }
 

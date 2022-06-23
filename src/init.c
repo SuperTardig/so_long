@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:01:13 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/22 14:50:07 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/23 09:47:48 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,6 @@ void	init_image(t_vars *vars)
 		(vars->mlx, "./asset/clouds_frame4.xpm", &width, &height);
 	vars->clouds[4] = mlx_xpm_file_to_image
 		(vars->mlx, "./asset/clouds_frame5.xpm", &width, &height);
-	vars->enemy[0] = mlx_xpm_file_to_image
-		(vars->mlx, "./asset/stormcloud_frame1.xpm", &width, &height);
-	vars->enemy[1] = mlx_xpm_file_to_image
-		(vars->mlx, "./asset/stormcloud_frame2.xpm", &width, &height);
-	vars->enemy[2] = mlx_xpm_file_to_image
-		(vars->mlx, "./asset/stormcloud_frame3.xpm", &width, &height);
-	vars->enemy[3] = mlx_xpm_file_to_image
-		(vars->mlx, "./asset/stormcloud_frame4.xpm", &width, &height);
 	init_image2(vars);
 }
 
@@ -106,6 +98,5 @@ void	init(t_vars *vars)
 	vars->frame_exit = 0;
 	vars->frame_plane = 0;
 	vars->frame_cloud = 0;
-	vars->frame_enemy = 0;
 	init_image(vars);
 }
