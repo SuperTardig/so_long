@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:01:13 by bperron           #+#    #+#             */
-/*   Updated: 2022/06/26 09:49:36 by bperron          ###   ########.fr       */
+/*   Updated: 2022/06/26 09:50:49 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void	init_image(t_vars *vars)
 
 void	init(t_vars *vars)
 {
-
 	vars->mlx = mlx_init();
 	vars->plane = malloc(sizeof(t_plane));
 	vars->map = malloc(sizeof(t_map));
