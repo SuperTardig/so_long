@@ -22,4 +22,3 @@ The bonus requirements for this project are as follows:
  1. Clone this repository
  2. Go to the root of the repository and use `make` or `make bonus` (you might have to go change the path of the MiniLibX)
  3. Use `./so_long <map>` or `./so_long_bonus <map>`
- 4. Enjoy!
