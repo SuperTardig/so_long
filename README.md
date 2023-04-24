@@ -1,5 +1,5 @@
 # so_long
-The goal of this 42 school project is to create a small 2d game using the school own graphic library, the MiniLibX. This project is a good introduction to graphical programmation due to it's simplicity and use of basic concepts.
+The goal of this 42 school project is to create a small 2d game using the school's graphic library, the MiniLibX. This project is a good introduction to graphical programmation due to it's simplicity and use of basic concepts.
 # Mandatory
 The mandatory requirements for this project are as follows:
   - The program take a file ending in .ber as argument, which contains the map
@@ -14,7 +14,7 @@ The mandatory requirements for this project are as follows:
   - It must be surrounded by walls
 # Bonus
 The bonus requirements for this project are as follows:
-  - Create an enemy patrol wich makes you lose the game
+  - Create an enemy patrol which makes you lose the game
   - Add some animations
   - Display the movement count on the screen
  # Usage
