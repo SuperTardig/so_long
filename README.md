@@ -2,13 +2,14 @@
 The goal of this 42 school project is to create a small 2d game using the school's graphic library, the MiniLibX. This project is a good introduction to graphical programmation due to it's simplicity and use of basic concepts.
 # Mandatory
 The mandatory requirements for this project are as follows:
-  - The program take a file ending in .ber as argument, which contains the map
+  - The program take a file ending in '.ber' as argument, which contains the map
   - The player needs to collect every collectible before being able to use the exit
-  - Movement uses the w, a, s and keys that move the player in their respective direction
+  - Movement uses the 'W', 'A', 'S' and 'D' keys that move the player in their respective direction
   - The player cannot go through walls
   - The number of move is displayed in the shell
   - Have a 2d view
-  - Clicking the window exit button or ESC must quit the game cleanely
+  - Have different texture for walls, floor, collectible, player and exit. They could be taken from the internet or made by yourself (I drew mine)
+  - Clicking the window exit button or 'ESC' must quit the game cleanely
   - The map must contain 1 exit, 1 starting position and at least 1 collectible
   - It must be rectangular
   - It must be surrounded by walls
